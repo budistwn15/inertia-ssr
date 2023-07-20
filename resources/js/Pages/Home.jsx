@@ -2,8 +2,10 @@ import App from "@/Layouts/App.jsx";
 import {Head} from "@inertiajs/react";
 import Container from "@/Components/Container.jsx";
 import Header from "@/Components/Header.jsx";
+import Grid from "@/Components/Grid.jsx";
+import ArticleBlock from "@/Components/ArticleBlock.jsx";
 
-export default function Home(){
+export default function Home({articles}){
     return (
         <div>
             <Head title="What's happening..."/>
@@ -20,7 +22,15 @@ export default function Home(){
                 </Header.Content>
             </Header>
 
-            <Container>Home</Container>
+            <Container>
+                {articles.length ? <Grid>
+                    {articles.map((article) =>
+                        <ArticleBlock key={article.slug} article={article}>
+
+                        </ArticleBlock>
+                    )}
+                </Grid> : <p>No articles yet...</p>}
+            </Container>
         </div>
     )
 }

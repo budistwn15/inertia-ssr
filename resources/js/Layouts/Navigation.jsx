@@ -9,14 +9,14 @@ export default function Navigation() {
     return (
         <>
             <ResponsiveNavigation />
-            <nav className="hidden border-b border-dashed border-gray-700 bg-gray-800 py-4 shadow lg:block">
+            <nav className="hidden border-b border-dashed border-gray-700 bg-gray-900 py-4 shadow lg:block">
                 <div className="mx-auto max-w-screen-2xl px-4">
                     <div className="flex items-center justify-between">
                         <Link
                             href={route('home')}
                             className="mr-3 text-lg font-semibold capitalize text-white"
                         >
-                            Inertia
+                            {import.meta.env.VITE_APP_NAME}
                         </Link>
 
                         <div className="flex flex-1 items-center justify-between">
