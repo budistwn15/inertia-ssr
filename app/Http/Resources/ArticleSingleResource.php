@@ -5,8 +5,7 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-/** @mixin \App\Models\Article */
-class ArticleItemResource extends JsonResource
+class ArticleSingleResource extends JsonResource
 {
     public function toArray(Request $request): array
     {
@@ -14,6 +13,7 @@ class ArticleItemResource extends JsonResource
             'title' => $this->title,
             'slug' => $this->slug,
             'teaser' => $this->teaser,
+            'body' => $this->body,
             'created_at' => $this->created_at->format('Y') == now()->format('Y') ? $this->created_at->format('d M') : $this->created_at->format('d M, Y'),
             'tags' => $this->tags->map(fn ($tag) => [
                 'name' => $tag->name,

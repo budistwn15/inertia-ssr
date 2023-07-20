@@ -1,5 +1,5 @@
 import App from "@/Layouts/App.jsx";
-import {Head} from "@inertiajs/react";
+import {Head, Link} from "@inertiajs/react";
 import Container from "@/Components/Container.jsx";
 import Header from "@/Components/Header.jsx";
 import Grid from "@/Components/Grid.jsx";
@@ -23,13 +23,18 @@ export default function Home({articles}){
             </Header>
 
             <Container>
-                {articles.length ? <Grid>
-                    {articles.map((article) =>
-                        <ArticleBlock key={article.slug} article={article}>
+                {articles.length ?
+                    <>
+                        <Grid>
+                            {articles.map((article) =>
+                                <ArticleBlock key={article.slug} article={article}>
 
-                        </ArticleBlock>
-                    )}
-                </Grid> : <p>No articles yet...</p>}
+                                </ArticleBlock>
+                            )}
+                        </Grid>
+                        <Link className="text-blue-600 block mt-10" href={route('articles.index')}>See all articles</Link>
+                    </>
+                    : <p>No articles yet...</p>}
             </Container>
         </div>
     )

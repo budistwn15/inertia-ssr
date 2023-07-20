@@ -1,5 +1,6 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
 import forms from '@tailwindcss/forms';
+import typography from '@tailwindcss/typography';
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -14,11 +15,13 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Work Sans', ...defaultTheme.fontFamily.sans],
+                mono: ['Dank Mono', ...defaultTheme.fontFamily.sans],
             },
         },
     },
 
     plugins: [
         forms,
+        typography
     ],
 };
