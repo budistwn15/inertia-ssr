@@ -5,7 +5,7 @@ import ResponsiveNavigation from '@/Layouts/ResponsiveNavigation';
 import {Link, usePage} from "@inertiajs/react";
 
 export default function Navigation() {
-    const {auth} = usePage().props;
+    const {auth, categoriesGlobal} = usePage().props;
     return (
         <>
             <ResponsiveNavigation />
@@ -27,6 +27,15 @@ export default function Navigation() {
                                 >
                                     Home
                                 </NavLink>
+                                {categoriesGlobal.map((category) => (
+                                    <NavLink
+                                        key={category.slug}
+                                        href={route('categories.show', category.slug)}
+                                        active={route().current('categories.show', category.slug)}
+                                    >
+                                        {category.name}
+                                    </NavLink>
+                                ))}
                             </div>
                             <div className="flex items-center">
                                 {auth.user ?
