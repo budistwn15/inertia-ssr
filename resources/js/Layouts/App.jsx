@@ -1,8 +1,8 @@
-import Navbar from "@/Layouts/Navbar.jsx";
+import Navigation from "@/Layouts/Navigation.jsx";
 
 export default function App({children}){
     return <>
-        <Navbar/>
+        <Navigation/>
         <div className="pt-8">{children}</div>
     </>
 }

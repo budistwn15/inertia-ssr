@@ -1,7 +1,13 @@
-import { forwardRef, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
+import clsx from 'clsx';
 
-export default forwardRef(function TextInput({ type = 'text', className = '', isFocused = false, ...props }, ref) {
-    const input = ref ? ref : useRef();
+export default function TextInput({
+                                  type = 'text',
+                                  className,
+                                  isFocused,
+                                  ...props
+                              }) {
+    const input = useRef();
 
     useEffect(() => {
         if (isFocused) {
@@ -13,11 +19,11 @@ export default forwardRef(function TextInput({ type = 'text', className = '', is
         <input
             {...props}
             type={type}
-            className={
-                'border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm ' +
-                className
-            }
+            className={clsx(
+                className,
+                'rounded-lg border border-gray-300 py-2 px-3 transition duration-200 focus:border-blue-300 focus:ring focus:ring-blue-100'
+            )}
             ref={input}
         />
     );
-});
+}
