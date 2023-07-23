@@ -1,12 +1,12 @@
-import React, { useEffect, useRef } from 'react';
+import React, {useEffect, useRef} from 'react';
 import clsx from 'clsx';
 
 export default function TextInput({
-                                  type = 'text',
-                                  className,
-                                  isFocused,
-                                  ...props
-                              }) {
+                                      type = 'text',
+                                      className,
+                                      isFocused,
+                                      ...props
+                                  }) {
     const input = useRef();
 
     useEffect(() => {
@@ -21,7 +21,7 @@ export default function TextInput({
             type={type}
             className={clsx(
                 className,
-                'rounded-lg border border-gray-300 py-2 px-3 transition duration-200 focus:border-blue-300 focus:ring focus:ring-blue-100'
+                'w-full rounded-lg border dark:border-gray-300 py-2 px-3 transition duration-200 focus:border-blue-300 focus:ring focus:ring-blue-100'
             )}
             ref={input}
         />
