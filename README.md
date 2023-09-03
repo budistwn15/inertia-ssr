@@ -1,1 +1,1 @@
-# Readme Inertia Laravel
+# Readme Inertia
