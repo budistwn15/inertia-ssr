@@ -1,1 +1,1 @@
-# Readme Inertia ssr
+# Readme Inertia
