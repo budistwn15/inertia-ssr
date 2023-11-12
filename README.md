@@ -1,1 +1,1 @@
-# Readme Inertia SSR
+# Inertia SSR
