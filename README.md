@@ -1,1 +1,1 @@
-# README Inertia React
+# README Inertia React SSR
